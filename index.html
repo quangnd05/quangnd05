@@ -19,6 +19,13 @@
             text-align: center;
             position: relative;
         }
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Đảm bảo ảnh sẽ không bị méo mó và giữ tỷ lệ hợp lý */
+            border-radius: 15px;
+        }
+
         header h1 {
             margin: 0;
             font-size: 2.5rem;
@@ -38,7 +45,7 @@
         }
         .photo-placeholder {
             width: 300px;
-            height: 300px;
+            height: 500px;
             background: #ffe6e6;
             border-radius: 15px;
             border: 2px dashed #ff99cc;
@@ -68,7 +75,6 @@
         .info-section:not(.personal-info) {
             background-color: #fff;
         }
-        /* Tạo lớp phủ tối màu với độ trong suốt */
         .info-section.personal-info::after {
             content: '';
             position: absolute;
@@ -76,7 +82,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(152, 94, 94, 0.5); /* Độ trong suốt để làm nổi bật văn bản */
+            background: rgba(152, 94, 94, 0.5);
             z-index: 1;
         }
         .info-section h2 {
@@ -95,6 +101,7 @@
             display: flex;
             gap: 15px;
             margin-top: 20px;
+            flex-wrap: wrap;
         }
         .media-placeholder {
             width: 100px;
@@ -108,6 +115,33 @@
             font-size: 0.9rem;
             color: #999;
             flex-shrink: 0;
+            overflow: hidden;
+        }
+        .media-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .video-section {
+            margin-top: 30px;
+            width: 100%;
+            text-align: center;
+            background-color: #ffe6f2; /* Tông màu nền nhẹ nhàng giống với phần "Điểm nổi bật" */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .video-section h2 {
+            font-size: 2rem;
+            color: #ff4da6; /* Màu chữ tông hồng tương tự như tiêu đề phần "Điểm nổi bật" */
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .video-section video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px; /* Làm bo góc video */
+            border: 2px solid #ff99cc; /* Đường viền màu hồng nhạt */
         }
         .message {
             text-align: center;
@@ -116,44 +150,43 @@
             color: #666;
         }
 
-        /* Media Query for mobile devices */
         @media (max-width: 768px) {
             body {
-                font-size: 14px; /* Giảm kích thước font cho màn hình nhỏ */
+                font-size: 14px;
             }
 
             .container {
-                flex-direction: column; /* Đảm bảo các phần tử trong container xếp chồng lên nhau */
-                align-items: center; /* Căn giữa các phần tử */
+                flex-direction: column;
+                align-items: center;
             }
 
             .photo-placeholder {
-                width: 100%; /* Đảm bảo ảnh chiếm toàn bộ chiều rộng màn hình */
-                max-width: 300px; /* Giới hạn chiều rộng */
+                width: 100%;
+                max-width: 300px;
                 height: auto;
             }
 
             .info-section {
-                width: 100%; /* Đảm bảo thông tin chiếm toàn bộ chiều rộng */
-                margin-bottom: 10px; /* Giảm khoảng cách giữa các section */
+                width: 100%;
+                margin-bottom: 10px;
             }
 
             .media-section {
-                flex-wrap: wrap; /* Cho phép các ảnh nhỏ xếp chồng lên nhau nếu cần */
-                justify-content: center; /* Căn giữa các ảnh */
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
             .media-placeholder {
-                width: 45%; /* Giảm kích thước của các media */
-                margin-bottom: 10px; /* Khoảng cách giữa các ảnh */
+                width: 45%;
+                margin-bottom: 10px;
             }
 
             header h1 {
-                font-size: 1.8rem; /* Giảm kích thước chữ header */
+                font-size: 1.8rem;
             }
 
             header img {
-                width: 50px; /* Giảm kích thước logo */
+                width: 50px;
             }
         }
     </style>
@@ -166,7 +199,7 @@
 
     <div class="container">
         <div class="photo-placeholder">
-            Ảnh sắp được cập nhật!
+            <img src="./img/avatar.jpg" alt="Ảnh sắp được cập nhật!" />
         </div>
         <div class="info-section personal-info">
             <h2>Thông tin cá nhân</h2>
@@ -176,32 +209,52 @@
             <p><strong>Quê quán:</strong> Hưng Yên</p>
             <p><strong>Chuyên môn:</strong> Sinh viên ngành kế toán</p>
             <div class="media-section">
-                <div class="media-placeholder">Ảnh 1</div>
-                <div class="media-placeholder">Ảnh 2</div>
-                <div class="media-placeholder">Ảnh 3</div>
-                <div class="media-placeholder">Ảnh 4</div>
-                <div class="media-placeholder">Ảnh 5</div>
-                <div class="media-placeholder">Ảnh 6</div>
-                <div class="media-placeholder">Video</div>
+                <div class="media-placeholder">
+                    <img src="./img/anh_1.jpg" alt="Ảnh 1" />
+                </div>
+                <div class="media-placeholder">
+                    <img src="./img/anh_2.jpg" alt="Ảnh 2" />
+                </div>
+                <div class="media-placeholder">
+                    <img src="" alt="Chưa có Ảnh 3" />
+                </div>
+                <div class="media-placeholder">
+                    <img src="./img/anh_4.jpg" alt="Chưa có Ảnh 4" />
+                </div>
+                <div class="media-placeholder">
+                    <img src="./img/anh_5.jpg" alt="Ảnh 5" />
+                </div>
+                <div class="media-placeholder">
+                    <img src="./img/anh_6.jpg" alt="Chưa có Ảnh 6" />
+                </div>
             </div>
         </div>
+    </div>
+
+    <!-- Video Section -->
+    <div class="video-section">
+        <h2>Video đặc biệt</h2>
+        <video controls>
+            <source src="./img/video_1.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
     </div>
 
     <div class="container">
         <div class="info-section">
             <h2>Điểm nổi bật</h2>
-            <p>Cô ấy là một người vợ... siêu đặc biệt! 🥰</p>
+            <p>Cô ấy là một người vợ (ngu)... siêu đặc biệt! 🥰</p>
         </div>
 
         <div class="info-section">
             <h2>Thông điệp đáng yêu</h2>
-            <p>"Thơm Thảo không hoàn hảo, nhưng chính điều đó làm cô ấy trở nên hoàn hảo trong mắt những người yêu thương cô ấy!"</p>
+            <p>"Thơm Thảo là người luôn có những quan điểm riêng biệt, đôi khi hơi cứng đầu, nhưng chính sự kiên định ấy làm cô ấy trở nên khác biệt và ngu dốt đối với tôi🥰!"</p>
         </div>
 
         <div class="info-section">
             <h2>Mô tả thêm</h2>
-            <p>Thơm Thảo là một người luôn tràn đầy năng lượng tích cực, khiến mọi người xung quanh cảm thấy vui vẻ và ấm áp. Cô ấy có một nụ cười rạng rỡ và khả năng lan tỏa niềm vui đến bất cứ đâu cô ấy đi qua.</p>
-            <p>Thảo còn rất khéo tay và sáng tạo, thường tự làm những món đồ nhỏ xinh để trang trí hoặc làm quà tặng. Cô ấy yêu thích việc chăm sóc mọi người và luôn biết cách khiến người khác cảm thấy được yêu thương.</p>
+            <p>Thơm Thảo rất ương bướng và hay cãi. Cô ấy luôn kiên quyết với suy nghĩ của mình và không ngại thể hiện ý kiến cá nhân. Đôi khi điều này có thể khiến mọi chuyện trở nên căng thẳng, nhưng chính tính cách mạnh mẽ đó lại làm cô ấy trở nên ngu trong mắt tôi🥰.</p>
+        </div>
         </div>
     </div>
 
