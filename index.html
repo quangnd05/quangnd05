@@ -115,6 +115,47 @@
             font-size: 1.2rem;
             color: #666;
         }
+
+        /* Media Query for mobile devices */
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px; /* Giảm kích thước font cho màn hình nhỏ */
+            }
+
+            .container {
+                flex-direction: column; /* Đảm bảo các phần tử trong container xếp chồng lên nhau */
+                align-items: center; /* Căn giữa các phần tử */
+            }
+
+            .photo-placeholder {
+                width: 100%; /* Đảm bảo ảnh chiếm toàn bộ chiều rộng màn hình */
+                max-width: 300px; /* Giới hạn chiều rộng */
+                height: auto;
+            }
+
+            .info-section {
+                width: 100%; /* Đảm bảo thông tin chiếm toàn bộ chiều rộng */
+                margin-bottom: 10px; /* Giảm khoảng cách giữa các section */
+            }
+
+            .media-section {
+                flex-wrap: wrap; /* Cho phép các ảnh nhỏ xếp chồng lên nhau nếu cần */
+                justify-content: center; /* Căn giữa các ảnh */
+            }
+
+            .media-placeholder {
+                width: 45%; /* Giảm kích thước của các media */
+                margin-bottom: 10px; /* Khoảng cách giữa các ảnh */
+            }
+
+            header h1 {
+                font-size: 1.8rem; /* Giảm kích thước chữ header */
+            }
+
+            header img {
+                width: 50px; /* Giảm kích thước logo */
+            }
+        }
     </style>
 </head>
 <body>
