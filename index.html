@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet Thơm Thảo</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffe6f2;
+            color: #333;
+        }
+        header {
+            background-color: #ff99cc;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(244, 241, 241, 0.1);
+            text-align: center;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #fff;
+        }
+        header img {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            width: 60px;
+        }
+        .container {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .photo-placeholder {
+            width: 300px;
+            height: 300px;
+            background: #ffe6e6;
+            border-radius: 15px;
+            border: 2px dashed #ff99cc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #999;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        .info-section {
+            flex: 1;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            color: #000000;
+            font-weight: bolder;
+        }
+        .info-section.personal-info {
+            background: url('img/background.jpg') no-repeat center center/cover;
+            position: relative;
+        }
+        .info-section:not(.personal-info) {
+            background-color: #fff;
+        }
+        /* Tạo lớp phủ tối màu với độ trong suốt */
+        .info-section.personal-info::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(152, 94, 94, 0.5); /* Độ trong suốt để làm nổi bật văn bản */
+            z-index: 1;
+        }
+        .info-section h2 {
+            color: #ff4da6;
+            font-size: 2rem;
+            font-weight: bold;
+            z-index: 2;
+        }
+        .info-section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin: 10px 0;
+            z-index: 2;
+        }
+        .media-section {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .media-placeholder {
+            width: 100px;
+            height: 100px;
+            background: #ffe6e6;
+            border-radius: 10px;
+            border: 2px dashed #ff99cc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #999;
+            flex-shrink: 0;
+        }
+        .message {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 1.2rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meet Thơm Thảo!</h1>
+        <img src="img/logo_hellokitty.webp" alt="Hello Kitty" />
+    </header>
+
+    <div class="container">
+        <div class="photo-placeholder">
+            Ảnh sắp được cập nhật!
+        </div>
+        <div class="info-section personal-info">
+            <h2>Thông tin cá nhân</h2>
+            <p><strong>Họ tên:</strong> Vũ Thị Thơm Thảo</p>
+            <p><strong>Tuổi:</strong> 18</p>
+            <p><strong>Sở thích:</strong> ❤️ Yêu động vật và vuốt ve các chú chim nhỏ</p>
+            <p><strong>Quê quán:</strong> Hưng Yên</p>
+            <p><strong>Chuyên môn:</strong> Sinh viên ngành kế toán</p>
+            <div class="media-section">
+                <div class="media-placeholder">Ảnh 1</div>
+                <div class="media-placeholder">Ảnh 2</div>
+                <div class="media-placeholder">Ảnh 3</div>
+                <div class="media-placeholder">Ảnh 4</div>
+                <div class="media-placeholder">Ảnh 5</div>
+                <div class="media-placeholder">Ảnh 6</div>
+                <div class="media-placeholder">Video</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="info-section">
+            <h2>Điểm nổi bật</h2>
+            <p>Cô ấy là một người vợ... siêu đặc biệt! 🥰</p>
+        </div>
+
+        <div class="info-section">
+            <h2>Thông điệp đáng yêu</h2>
+            <p>"Thơm Thảo không hoàn hảo, nhưng chính điều đó làm cô ấy trở nên hoàn hảo trong mắt những người yêu thương cô ấy!"</p>
+        </div>
+
+        <div class="info-section">
+            <h2>Mô tả thêm</h2>
+            <p>Thơm Thảo là một người luôn tràn đầy năng lượng tích cực, khiến mọi người xung quanh cảm thấy vui vẻ và ấm áp. Cô ấy có một nụ cười rạng rỡ và khả năng lan tỏa niềm vui đến bất cứ đâu cô ấy đi qua.</p>
+            <p>Thảo còn rất khéo tay và sáng tạo, thường tự làm những món đồ nhỏ xinh để trang trí hoặc làm quà tặng. Cô ấy yêu thích việc chăm sóc mọi người và luôn biết cách khiến người khác cảm thấy được yêu thương.</p>
+        </div>
+    </div>
+
+    <div class="message">
+        💖 Trang web này được tạo bởi người luôn yêu thương cô ấy! 💖
+        <hr>
+        <div style="color: rgb(10, 10, 10);"> 
+            <i>Nguyễn Đình Quang</i>
+        </div>
+        <hr>
+    </div>
+</body>
+</html>
